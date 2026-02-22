@@ -1,10 +1,11 @@
 // File System module
 const fs = require('fs');
 const http = require('http');
+const path = require('path');
 
 // 1. Read file example
 console.log("=== Reading file ===");
-const filePath = 'file.txt';
+const filePath = path.join(__dirname, 'file.txt');
 
 // Ensure the file exists so the example runs successfully
 if (!fs.existsSync(filePath)) {
@@ -21,7 +22,7 @@ fs.readFile(filePath, 'utf8', (err, data) => {
 
 // 2. Write to file example
 console.log("\n=== Writing to file ===");
-fs.writeFile('output.txt', 'This was created by Node.js!', (err) => {
+fs.writeFile(path.join(__dirname, 'output.txt'), 'This was created by Node.js!', (err) => {
     if (err) {
         console.error('Error writing file:', err);
         return;
