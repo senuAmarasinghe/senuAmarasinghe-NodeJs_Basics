@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-basics",
+  "version": "1.0.0",
+  "description": "Node.js basics examples",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
