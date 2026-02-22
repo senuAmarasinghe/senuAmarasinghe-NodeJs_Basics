@@ -4,7 +4,14 @@ const http = require('http');
 
 // 1. Read file example
 console.log("=== Reading file ===");
-fs.readFile('file.txt', 'utf8', (err, data) => {
+const filePath = 'file.txt';
+
+// Ensure the file exists so the example runs successfully
+if (!fs.existsSync(filePath)) {
+    fs.writeFileSync(filePath, 'Sample content created by app.js\n', 'utf8');
+}
+
+fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
         console.error('Error reading file:', err);
         return;
